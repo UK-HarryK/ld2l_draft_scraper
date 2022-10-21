@@ -26,8 +26,6 @@ def combine_games(*games):
             "order": []
         }
 
-    print(bans)
-
 
     for a in games:
         for x, y in a.total_picks.items():
@@ -36,7 +34,6 @@ def combine_games(*games):
     
     for a in games:
         for x, y in a.total_bans.items():
-            print(y)
             bans[x]["bans"] = bans[x]["bans"] + y["bans"]
             bans[x]["order"].extend(y["order"])
 

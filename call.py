@@ -6,6 +6,8 @@ match_id_2 = 6765415313
 match_id_3 = 6776639740
 match_id_4 = 6776690997
 
+# 8820557 team id
+
 def call_heroes_list():
      url = "https://api.opendota.com/api/heroes"
      response = requests.get(url)
@@ -16,8 +18,8 @@ def call_heroes_list():
 heroes = call_heroes_list()
 
 
-week1 = SeriesPicksBans(heroes, match_id_1, match_id_2, False, False)
-week2 = SeriesPicksBans(heroes, match_id_3, match_id_4, True, True)
+week1 = SeriesPicksBans(heroes, match_id_1, match_id_2, 8820557)
+week2 = SeriesPicksBans(heroes, match_id_3, match_id_4, 8820557)
 week1.create_series_total_picks()
 week1.create_series_total_bans()
 week2.create_series_total_picks()

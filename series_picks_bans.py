@@ -5,15 +5,13 @@ from base_object import BaseObject
 import asyncio
 class SeriesPicksBans(BaseObject):
 # pass in match ids 
-    def __init__(self, heroes_dict ,match_id_1, match_id_2, radient_game_1, radient_game_2):
-        super().__init__(heroes_dict)
+    def __init__(self, heroes_dict ,match_id_1, match_id_2, team_id):
+        super().__init__(heroes_dict, team_id)
         self.match_id_1 = match_id_1
         self.match_id_2 = match_id_2
-        self.radient_g1 = radient_game_1
-        self.radient_g2 = radient_game_2
         self.loop = asyncio.get_event_loop()
-        self.g1p, self.g1b = self.loop.run_until_complete(super().construct_game_pick_bans(match_id_1, radient_game_1))
-        self.g2p, self.g2b = self.loop.run_until_complete(super().construct_game_pick_bans(match_id_2, radient_game_2))
+        self.g1p, self.g1b = self.loop.run_until_complete(super().construct_game_pick_bans(match_id_1))
+        self.g2p, self.g2b = self.loop.run_until_complete(super().construct_game_pick_bans(match_id_2))
         self.total_picks = {}
         self.total_bans = {}
 
