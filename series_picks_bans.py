@@ -57,7 +57,7 @@ class SeriesPicksBans(BaseObject):
                 continue
             else:
                 self.total_bans[x] = {
-                    "picks": 1,
+                    "bans": 1,
                     "order": [m(y)]
                 }
 
