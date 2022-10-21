@@ -16,8 +16,8 @@ def call_heroes_list():
 heroes = call_heroes_list()
 
 
-week1 = SeriesPicksBans(heroes, match_id_1, match_id_2)
-week2 = SeriesPicksBans(heroes, match_id_3, match_id_4)
+week1 = SeriesPicksBans(heroes, match_id_1, match_id_2, False, False)
+week2 = SeriesPicksBans(heroes, match_id_3, match_id_4, True, True)
 week1.create_series_total_picks()
 week1.create_series_total_bans()
 week2.create_series_total_picks()

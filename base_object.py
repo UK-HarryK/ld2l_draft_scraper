@@ -19,7 +19,7 @@ class BaseObject:
             if x == id:
                 return y
 
-    async def construct_game_pick_bans(self, match_id):
+    async def construct_game_pick_bans(self, match_id, radient):
         draft_timings = await self.call_match(match_id)
         game_picks = {}
         game_bans = {}
@@ -29,7 +29,7 @@ class BaseObject:
             hero = x["hero_id"]
             team = x["team"]
             hero = self.hero_id_to_name(str(x["hero_id"]))
-            if team == 1:
+            if team != radient:
                 if pick:
                     game_picks.update({hero: order})
                 else:
